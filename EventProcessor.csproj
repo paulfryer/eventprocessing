@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Akka">
-      <HintPath>..\MusicProcessor\packages\Akka.1.0.0\lib\net45\Akka.dll</HintPath>
+      <HintPath>packages\Akka.1.0.3\lib\net45\Akka.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -71,7 +71,7 @@
       <HintPath>packages\WindowsAzure.ServiceBus.2.7.3\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ServiceBus.Messaging.EventProcessorHost">
-      <HintPath>..\MusicProcessor\packages\Microsoft.Azure.ServiceBus.EventProcessorHost.1.1.2\lib\net45-full\Microsoft.ServiceBus.Messaging.EventProcessorHost.dll</HintPath>
+      <HintPath>packages\Microsoft.Azure.ServiceBus.EventProcessorHost.1.2.0\lib\net45-full\Microsoft.ServiceBus.Messaging.EventProcessorHost.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -89,10 +89,10 @@
       <HintPath>packages\taglib.2.1.0.0\lib\policy.2.0.taglib-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Serilog">
-      <HintPath>..\MusicProcessor\packages\Serilog.1.5.7\lib\net45\Serilog.dll</HintPath>
+      <HintPath>packages\Serilog.1.5.7\lib\net45\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.FullNetFx">
-      <HintPath>..\MusicProcessor\packages\Serilog.1.5.7\lib\net45\Serilog.FullNetFx.dll</HintPath>
+      <HintPath>packages\Serilog.1.5.7\lib\net45\Serilog.FullNetFx.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
