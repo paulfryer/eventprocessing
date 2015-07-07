@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MusicIndexer.Actors.BlobStorageActor">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actors\BlobStorageActor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Actors.LoggingActor">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="MusicIndexer.Actors.LoggingActor.LogMessage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Actors\LoggingActor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actors\LoggingActor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Actors.Mp3RecordManager">
+    <Position X="13.25" Y="3.5" Width="2.25" />
+    <NestedTypes>
+      <Class Name="MusicIndexer.Actors.Mp3RecordManager.TrackEntity" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Actors\Mp3RecordManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAACQQAAAAEAAAEACCAAAAAAAAA=</HashCode>
+      <FileName>Actors\Mp3RecordManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Actors.Mp3Tagger">
+    <Position X="10.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Actors\Mp3Tagger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Actors.ResourceDownloader">
+    <Position X="9.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAA=</HashCode>
+      <FileName>Actors\ResourceDownloader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MusicIndexer.Applications.NetworkListenerEventProcessingApplication">
+    <Position X="11" Y="4.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAACAgAAIAAAAAAACAAQAgAAAAAECgQAACAwAQ=</HashCode>
+      <FileName>Applications\NetworkListenerEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MusicIndexer.Applications.LastChangedPropertiesContent">
+    <Position X="14.25" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Applications\NetworkListenerEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Applications.Content">
+    <Position X="12" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Applications\NetworkListenerEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Applications.XmlContent">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\NetworkListenerEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Applications.StringContent">
+    <Position X="17.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\NetworkListenerEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Applications.PropertyContent">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Applications\NetworkListenerEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MusicIndexer.Applications.PropertiesContent">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Applications\NetworkListenerEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MusicIndexer.Applications.IEventProcessingApplication">
+    <Position X="17.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\IEventProcessingApplication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
