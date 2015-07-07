@@ -20,7 +20,7 @@ namespace MusicIndexer.Actors
     {
         private static readonly string StorageAccountName = ConfigurationManager.AppSettings["StorageAccountName"];
         private static readonly string StorageAccountKey = ConfigurationManager.AppSettings["StorageAccountKey"];
-
+        private static readonly string StorageTableName = ConfigurationManager.AppSettings["StorageTableName"];
         private static readonly string StorageConnectionString =
             string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
                 StorageAccountName, StorageAccountKey);
@@ -39,7 +39,7 @@ namespace MusicIndexer.Actors
                 var pathHash = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(path));
                 var rowKey = message.Album + " - " + message.Track; //BitConverter.ToString(pathHash).Replace("-", "");
                 var tableClient = storageAccount.CreateCloudTableClient();
-                var table = tableClient.GetTableReference("Tracks");
+                var table = tableClient.GetTableReference(StorageTableName);
                 trackEntity = new TrackEntity
                 {
                     Album = message.Album,

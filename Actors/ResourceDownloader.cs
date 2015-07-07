@@ -48,7 +48,7 @@ namespace MusicIndexer.Actors
             {
                 var senderClosure = Sender;
 
-                Log.Information("Downloading {resourceUri}", message.ResourceUri);
+                Log.Information("Downloading album art from: {resourceUri}", message.ResourceUri);
 
                 var request = new HttpRequestMessage
                 {

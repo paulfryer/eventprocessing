@@ -12,12 +12,13 @@ namespace MusicIndexer.Actors
         {
             var storageAccountName = ConfigurationManager.AppSettings["StorageAccountName"];
             var storageAccountKey = ConfigurationManager.AppSettings["StorageAccountKey"];
+            var storageBlobName = ConfigurationManager.AppSettings["StorageBlobName"];
             var storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
                 storageAccountName, storageAccountKey);
 
             var storageAccount = CloudStorageAccount.Parse(storageConnectionString);
             var blobClient = storageAccount.CreateCloudBlobClient();
-            var container = blobClient.GetContainerReference("music");
+            var container = blobClient.GetContainerReference(storageBlobName);
             container.CreateIfNotExists();
 
             Receive<StoreBlobRequest>(
