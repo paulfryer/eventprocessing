@@ -10,6 +10,7 @@ using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using Microsoft.WindowsAzure.Storage.Table;
 using MusicIndexer.Media;
 using MusicIndexer.Messages;
+using Serilog;
 using TagLib;
 using File = TagLib.File;
 
@@ -29,7 +30,7 @@ namespace MusicIndexer.Actors
         private string path;
         private TrackEntity trackEntity;
 
-        public Mp3RecordManager(IActorRef resourceDownloader, IActorRef resourceStorer, IActorRef logger)
+        public Mp3RecordManager(IActorRef resourceDownloader, IActorRef resourceStorer)
         {
             Receive<NewRecordMessage>(async message =>
             {
@@ -76,10 +77,9 @@ namespace MusicIndexer.Actors
                     var mp3Downloaded =
                         await resourceDownloader.Ask<Mp3Downloaded>(new DownloadMp3(message.FileLocation));
 
-
-                    logger.Tell(
-                        new LoggingActor.LogMessage("receieved downloaded MP3: [" + mp3Downloaded.Resource.Length + "] " +
-                                                    mp3Downloaded.ResourceUri));
+                    Log.Information("Received downloaded MP3. Length: {length}, Location: {resourceUri}", mp3Downloaded.Resource.Length,
+                        mp3Downloaded.ResourceUri);
+           
 
                     var memoryStream = new MemoryStream();
                     memoryStream.Write(mp3Downloaded.Resource, 0, mp3Downloaded.Resource.Length);
@@ -102,15 +102,17 @@ namespace MusicIndexer.Actors
                     var savedFile = ReadToEnd(simpleFile.Stream);
                     resourceStorer.Tell(new StoreBlobRequest(path, savedFile));
 
-                    logger.Tell(new LoggingActor.LogMessage("Creating Record: " + message.Artist));
+                    Log.Information("Creating record: {artist}", message.Artist);
                 }
             });
 
             Receive<Mp3Downloaded>(message =>
             {
-                logger.Tell(
-                    new LoggingActor.LogMessage("receieved downloaded MP3: [" + message.Resource.Length + "] " +
-                                                message.ResourceUri));
+                Log.Information("receieved downloaded MP3. Length: {length}, Resource URI: {resourceUri}",
+                    message.Resource.Length,
+                    message.ResourceUri);
+
+
 
                 var memoryStream = new MemoryStream();
                 memoryStream.Write(message.Resource, 0, message.Resource.Length);

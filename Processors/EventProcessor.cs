@@ -14,19 +14,17 @@ namespace MusicIndexer.Processors
 {
     public class EventProcessor : IEventProcessor
     {
-        private readonly IActorRef logger;
         private readonly IActorRef recordCreator;
         private readonly ActorSystem system;
 
         public EventProcessor()
         {
             system = ActorSystem.Create("MusicFileProcessingSystem");
-            logger = system.ActorOf(Props.Create<LoggingActor>(), "loggingActor");
-            var resourceDownloaderProps = Props.Create<ResourceDownloader>(logger);
+            var resourceDownloaderProps = Props.Create<ResourceDownloader>();
             var resourceDownloader = system.ActorOf(resourceDownloaderProps, "resourceDownloader");
             var resourceStorerProps = Props.Create<BlobStorageActor>();
             var resourceStorer = system.ActorOf(resourceStorerProps, "resourceStorer");
-            var recordCreatorProps = Props.Create<Mp3RecordManager>(resourceDownloader, resourceStorer, logger);
+            var recordCreatorProps = Props.Create<Mp3RecordManager>(resourceDownloader, resourceStorer);
             recordCreator = system.ActorOf(recordCreatorProps, "recordCreator");
         }
 
@@ -34,7 +32,7 @@ namespace MusicIndexer.Processors
         {
             foreach (var eventData in messages)
             {
-                Log.Logger.Information(" <" + DateTime.UtcNow.Second + "> ");
+                Log.Logger.Information("Processing event: {sequenceNumber}", eventData.SequenceNumber);
                 var data = Encoding.UTF8.GetString(eventData.GetBytes());
                 try
                 {
@@ -116,17 +114,15 @@ namespace MusicIndexer.Processors
 
         public async Task OpenAsync(PartitionContext context)
         {
-            logger.Tell(
-                new LoggingActor.LogMessage(
-                    string.Format("SimpleEventProcessor initialize.  Partition: '{0}', Offset: '{1}'",
-                        context.Lease.PartitionId, context.Lease.Offset)));
+            Log.Information("SimpleEventProcessor initialize.  Partition: '{partitionId}', Offset: '{offset}'",
+                context.Lease.PartitionId, context.Lease.Offset);
         }
 
         public async Task CloseAsync(PartitionContext context, CloseReason reason)
         {
-            logger.Tell(
-                new LoggingActor.LogMessage(string.Format("Processor Shuting Down. Partition '{0}', Reason: '{1}'.",
-                    context.Lease.PartitionId, reason)));
+            Log.Information("Processor Shuting Down. Partition '{partitionId}', Reason: '{reason}'.",
+                context.Lease.PartitionId, reason);
+
             if (reason == CloseReason.Shutdown)
                 await context.CheckpointAsync();
             system.AwaitTermination();

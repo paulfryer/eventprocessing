@@ -21,7 +21,8 @@ namespace MusicIndexer
             var eventProcessorHostName = Guid.NewGuid().ToString();
             var eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName,
                 EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);
-            eventProcessorHost.RegisterEventProcessorAsync<ApplicationEventProcessor>();
+            eventProcessorHost.RegisterEventProcessorAsync<EventProcessor>().Wait();
+          
             Log.Logger.Information("Receiving. Press enter key to stop worker.");
             Console.ReadLine();
         }

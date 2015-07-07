@@ -82,7 +82,7 @@
       <HintPath>..\MusicProcessor\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\MusicProcessor\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="policy.2.0.taglib-sharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -138,7 +138,6 @@
     <Compile Include="Messages\DownloadResourceMessage.cs" />
     <Compile Include="Processors\ApplicationEventProcessor.cs" />
     <Compile Include="Processors\EventProcessor.cs" />
-    <Compile Include="Actors\LoggingActor.cs" />
     <Compile Include="Actors\BlobStorageActor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

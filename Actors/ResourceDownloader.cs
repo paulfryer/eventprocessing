@@ -15,7 +15,7 @@ namespace MusicIndexer.Actors
 
         private readonly HttpClient httpClient = new HttpClient();
 
-        public ResourceDownloader(IActorRef loggingActor)
+        public ResourceDownloader()
         {
             Receive<DownloadMp3>(message =>
             {

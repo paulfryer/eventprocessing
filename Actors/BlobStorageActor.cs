@@ -23,7 +23,7 @@ namespace MusicIndexer.Actors
             Receive<StoreBlobRequest>(
                 request =>
                 {
-                    Log.Information("Storing {resourceUri}", request.StorageLocation);
+                    Log.Information("Storing resource: {resourceUri}", request.StorageLocation);
                     var blockBlob = container.GetBlockBlobReference(request.StorageLocation);
                     if (!blockBlob.Exists())
                     {
